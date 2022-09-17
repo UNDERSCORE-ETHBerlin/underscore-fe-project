@@ -1,13 +1,12 @@
-import { useNavigate } from "react-router-dom"
-import { Navbar, Nav, Container, Stack } from "react-bootstrap"
+import { useNavigate } from "react-router-dom";
+import { Navbar, Nav, Container, Stack } from "react-bootstrap";
 import { shortenAddress, useEthers, useLookupAddress } from "@usedapp/core";
-import logo from "../assets/images/logo.gif"
+import logo from "../assets/images/logo.gif";
 import { Button } from "./";
 import Avatar from "boring-avatars";
 import { useEffect, useState } from "react";
 
 const Navigation = () => {
-
 	const navigate = useNavigate();
 	const ens = useLookupAddress();
 
@@ -33,42 +32,44 @@ const Navigation = () => {
 	return (
 		<Navbar expand="lg" className="navbar-theme" variant="dark">
 			<Container fluid>
-				<Navbar.Brand href="/">
-					<img src={logo} width="240" height="40" className="" alt="" />
+				<Navbar.Brand>
+					<img
+						src={logo}
+						width="240"
+						height="40"
+						className=""
+						alt=""
+						onClick={() => {
+							navigate("/");
+						}}
+					/>
 				</Navbar.Brand>
 
 				<Navbar.Collapse id="navbarScroll">
-					<Nav 
-						className="me-auto my-2 my-lg-0"
-            			style={{ maxHeight: '100px' }}
-            			navbarScroll
-            		>
+					<Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
 						<></>
 					</Nav>
 
 					<Nav>
-						{ address !== "" ?
-							<Button 
+						{address !== "" ? (
+							<Button
 								onClick={() => {
-									navigate("/create")
+									navigate("/create");
 								}}
 							>
 								Create
 							</Button>
-						:
+						) : (
 							<></>
-						}
+						)}
 
-						{ address !== "" ?
+						{address !== "" ? (
 							<Button
 								onClick={() => {
-									navigate("/profile")
+									navigate("/profile");
 								}}
-							>	
-								<Stack
-									direction="horizontal" 
-									gap={2}
-								>
+							>
+								<Stack direction="horizontal" gap={2}>
 									<Avatar
 										size={24}
 										name={address}
@@ -77,9 +78,9 @@ const Navigation = () => {
 									/>
 								</Stack>
 							</Button>
-						:
+						) : (
 							<></>
-						}
+						)}
 
 						<Button
 							onClick={() => {
@@ -91,11 +92,7 @@ const Navigation = () => {
 							}}
 							style={{ color: address === "" ? "white" : "red" }}
 						>
-							{ address === "" ? 
-								"Connect Wallet" 
-							:
-								"Disconnect"
-							}
+							{address === "" ? "Connect Wallet" : "Disconnect"}
 						</Button>
 					</Nav>
 				</Navbar.Collapse>

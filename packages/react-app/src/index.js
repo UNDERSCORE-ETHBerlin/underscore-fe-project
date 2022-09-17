@@ -17,7 +17,7 @@ const config = {
 ReactDOM.render(
 	<React.StrictMode>
 		<DAppProvider config={config}>
-			<BrowserRouter>
+			<BrowserRouter basename="underscore-fe-project">
 				<App />
 			</BrowserRouter>
 		</DAppProvider>
