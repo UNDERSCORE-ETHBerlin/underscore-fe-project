@@ -14,7 +14,7 @@ const Profile = () => {
 	return (
 		<>
 			<Tabs defaultActiveKey="listings" id="fill-tab-example" className="mb-3" fill>
-				<Tab eventKey="listings" title="Listings">
+				<Tab eventKey="listings" title="Your Listings">
 					<Container fluid>
 						<Row>
 							{data && data[0]?.length > 0
@@ -22,7 +22,7 @@ const Profile = () => {
 										return (
 											<Col key={item}>
 												<br />
-												<CardComp item={item} />
+												<CardComp itemAddress={item} />
 												<br />
 											</Col>
 										);
@@ -33,6 +33,9 @@ const Profile = () => {
 				</Tab>
 				<Tab eventKey="sold" title="Sold">
 					No Sold Items
+				</Tab>
+				<Tab eventKey="purchased" title="Purchased">
+					No Purchased Items
 				</Tab>
 			</Tabs>
 		</>

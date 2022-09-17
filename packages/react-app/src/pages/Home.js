@@ -24,7 +24,7 @@ const Home = () => {
 					return (
 						<Col key={item}>
 							<br />
-							<CardComp item={item} />
+							<CardComp itemAddress={item} />
 							<br />
 						</Col>
 					);
