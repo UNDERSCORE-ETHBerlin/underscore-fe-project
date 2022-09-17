@@ -34,7 +34,6 @@ export const Header = styled.header`
   align-items: center;
   background-color: #282c34;
   color: white;
-  display: flex;
   flex-direction: row;
   justify-content: flex-end;
   min-height: 70px;

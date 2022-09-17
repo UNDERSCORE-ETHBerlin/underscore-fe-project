@@ -1,19 +1,20 @@
-import React from "react";
-import Navigation from "./components/Navbar";
-import { Body, Container, Header } from "./components";
-import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Create from "./pages/Create";
-import Profile from "./pages/Profile";
+import React from "react"
+import { Routes, Route } from "react-router-dom"
 
-function App() {
-	// Read more about useDapp on https://usedapp.io/
+import Navigation from "./components/Navigation"
+import { Body, Container, Header } from "./components"
 
+import Home from "./pages/Home"
+import Create from "./pages/Create"
+import Profile from "./pages/Profile"
+
+const App = () => {
 	return (
 		<Container>
 			<Header>
 				<Navigation />
 			</Header>
+
 			<Body>
 				<Routes>
 					<Route path="/" element={<Home />} />
@@ -22,7 +23,7 @@ function App() {
 				</Routes>
 			</Body>
 		</Container>
-	);
+	)
 }
 
 export default App;
