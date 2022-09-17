@@ -1,12 +1,13 @@
-import "./index.css";
+import React from "react"
+import ReactDOM from "react-dom"
+import { BrowserRouter } from "react-router-dom"
 
-import { DAppProvider, Goerli } from "@usedapp/core";
-import React from "react";
-import ReactDOM from "react-dom";
+import { DAppProvider, Goerli } from "@usedapp/core"
 
-import App from "./App";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css"
+import "./index.css"
+
+import App from "./App"
 
 // IMPORTANT, PLEASE READ
 // To avoid disruptions in your app, change this to your own Infura project id.
@@ -15,9 +16,9 @@ const INFURA_PROJECT_ID = "8b60443ba0a642fd90aa5f5799b0321c";
 const config = {
 	readOnlyChainId: Goerli.chainId,
 	readOnlyUrls: {
-		[Goerli.chainId]: "https://goerli.infura.io/v3/" + INFURA_PROJECT_ID,
-	},
-};
+		[Goerli.chainId]: "https://goerli.infura.io/v3/" + INFURA_PROJECT_ID
+	}
+}
 
 ReactDOM.render(
 	<React.StrictMode>
@@ -28,4 +29,4 @@ ReactDOM.render(
 		</DAppProvider>
 	</React.StrictMode>,
 	document.getElementById("root")
-);
+)
