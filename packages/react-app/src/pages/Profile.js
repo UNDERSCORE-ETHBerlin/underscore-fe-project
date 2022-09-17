@@ -24,7 +24,30 @@ const Profile = () => {
 		}) ?? {};
 	console.log("purchasedItems :>> ", purchasedItems);
 	return (
-		<>
+		<Stack 
+			direction="vertical" 
+			gap={2}
+			style={{
+				margin: "auto",
+				width: "80%",
+				padding: "20px"
+			}}
+		>	
+			<Stack
+				direction="vertical" 
+				gap={2}
+			>
+				<Avatar
+					size={240}
+					name={account}
+					variant="pixel"
+					colors={["#92A1C6", "#146A7C", "#F0AB3D", "#C271B4", "#C20D90"]}
+					style={{ textAlign: "center" }}
+				/>
+
+				<h2>{account}</h2>
+			</Stack>
+
 			<Tabs defaultActiveKey="listings" id="fill-tab-example" className="mb-3" fill>
 				<Tab eventKey="listings" title="Your Listings">
 					<Container fluid>
@@ -60,7 +83,7 @@ const Profile = () => {
 						: "No Items Found"}
 				</Tab>
 			</Tabs>
-		</>
+		</Stack>
 	);
 };
 
