@@ -1,4 +1,5 @@
 const addresses = {
-	factory: "0x524084e710b0f5459CE088847A051e65cf5a4fe2",
+	factory: "0xfe9700ba1d4fb7fCd3101aF9c31d413c5bE88115",
+	fakeUSDC: "0x0f8Af786BECF7830b0CA387D2Cd7894959Bb2beB",
 };
 export default addresses;
