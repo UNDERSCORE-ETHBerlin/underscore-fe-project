@@ -1,0 +1,6 @@
+.inputContainer {
+	display: flex;
+	width: 500px;
+	justify-content: space-between;
+	margin: 24px 0;
+}
