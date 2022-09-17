@@ -32,7 +32,7 @@ const Profile = () => {
 					</Container>
 				</Tab>
 				<Tab eventKey="sold" title="Sold">
-					dsjfnjkn
+					No Sold Items
 				</Tab>
 			</Tabs>
 		</>

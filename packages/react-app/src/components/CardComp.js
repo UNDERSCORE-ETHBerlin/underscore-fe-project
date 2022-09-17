@@ -4,11 +4,12 @@ import Card from "react-bootstrap/Card";
 import { utils } from "ethers";
 import { abis } from "@my-app/contracts";
 import { Contract } from "@ethersproject/contracts";
-
+import { fakeUSDCContract } from "../constants";
 const listingInterface = new utils.Interface(abis.listing.abi);
-const CardComp = ({ item }) => {
-	const listingContract = new Contract(item, listingInterface);
+const CardComp = ({ item: itemAddress }) => {
+	const listingContract = new Contract(itemAddress, listingInterface);
 	const { state: buyState, send: buy } = useContractFunction(listingContract, "buy");
+	const { state: approveAllowanceState, send: approveAllowance } = useContractFunction(fakeUSDCContract, "approve");
 
 	const { value: data } =
 		useCall({
@@ -16,11 +17,16 @@ const CardComp = ({ item }) => {
 			method: "getFrontEndData",
 			args: [],
 		}) ?? {};
-	const handleBuy = () => {
+	const handleBuy = async () => {
 		console.log("buy clicked");
-		buy();
+		const price = utils.formatEther(data[0]?.amountWanted_);
+		console.log("price", price);
+		await approveAllowance(itemAddress, data[0]?.amountWanted_);
+
+		await buy();
 	};
 
+	console.log("approveAllowanceState", approveAllowanceState);
 	console.log("buyState", buyState);
 	console.log("data", data);
 	return data ? (
