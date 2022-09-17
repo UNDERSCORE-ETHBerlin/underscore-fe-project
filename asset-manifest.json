@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/underscore-fe-project/static/css/main.15d6ab0c.chunk.css",
-    "main.js": "/underscore-fe-project/static/js/main.4cd46c20.chunk.js",
-    "main.js.map": "/underscore-fe-project/static/js/main.4cd46c20.chunk.js.map",
+    "main.js": "/underscore-fe-project/static/js/main.7c5b9541.chunk.js",
+    "main.js.map": "/underscore-fe-project/static/js/main.7c5b9541.chunk.js.map",
     "runtime-main.js": "/underscore-fe-project/static/js/runtime-main.15bea215.js",
     "runtime-main.js.map": "/underscore-fe-project/static/js/runtime-main.15bea215.js.map",
     "static/css/2.e9590945.chunk.css": "/underscore-fe-project/static/css/2.e9590945.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.e9590945.chunk.css",
     "static/js/2.76e78551.chunk.js",
     "static/css/main.15d6ab0c.chunk.css",
-    "static/js/main.4cd46c20.chunk.js"
+    "static/js/main.7c5b9541.chunk.js"
   ]
 }
