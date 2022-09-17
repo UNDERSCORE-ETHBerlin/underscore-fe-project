@@ -14,6 +14,7 @@ const config = {
 	},
 };
 
+
 ReactDOM.render(
 	<React.StrictMode>
 		<DAppProvider config={config}>
