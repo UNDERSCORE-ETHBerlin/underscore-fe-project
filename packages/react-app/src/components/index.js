@@ -42,11 +42,3 @@ export const Image = styled.img`
   margin-bottom: 16px;
   pointer-events: none;
 `;
-
-export const Link = styled.a.attrs({
-  target: "_blank",
-  rel: "noopener noreferrer",
-})`
-  color: #61dafb;
-  margin-top: 8px;
-`;

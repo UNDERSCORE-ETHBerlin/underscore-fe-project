@@ -59,6 +59,28 @@ const Navigation = () => {
 							<></>
 						}
 
+						{ address !== "" ?
+							<Button
+								onClick={() => {
+									navigate("/profile")
+								}}
+							>	
+								<Stack
+									direction="horizontal" 
+									gap={2}
+								>
+									<Avatar
+										size={24}
+										name={address}
+										variant="pixel"
+										colors={["#92A1C6", "#146A7C", "#F0AB3D", "#C271B4", "#C20D90"]}
+									/>
+								</Stack>
+							</Button>
+						:
+							<></>
+						}
+
 						<Button
 							onClick={() => {
 								if (!account) {
@@ -67,6 +89,7 @@ const Navigation = () => {
 									deactivate();
 								}
 							}}
+							style={{ color: address === "" ? "white" : "red" }}
 						>
 							{ address === "" ? 
 								"Connect Wallet" 
@@ -74,23 +97,6 @@ const Navigation = () => {
 								"Disconnect"
 							}
 						</Button>
-
-						{ address !== "" ?
-							<Button
-								onClick={() => {
-									navigate("/profile")
-								}}
-							>
-								<Avatar
-									size={24}
-									name={address}
-									variant="pixel"
-									colors={["#92A1C6", "#146A7C", "#F0AB3D", "#C271B4", "#C20D90"]}
-								/>
-							</Button>
-						:
-							<></>
-						}
 					</Nav>
 				</Navbar.Collapse>
 			</Container>
