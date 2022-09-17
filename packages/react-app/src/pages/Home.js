@@ -10,18 +10,16 @@ function Home() {
 			method: "getActiveListings",
 			args: [],
 		}) ?? {};
-	console.log("items", items);
+	// console.log("items", items);
 	useEffect(() => {
 		setItems(value);
 	}, [value]);
 	if (!items?.length) return <div>Loading</div>;
-	return (
-		<div>
-			{items?.map((item) => {
-				return <CardComp key={item} item={item} />;
-			})}
-		</div>
-	);
+	const cards = items[0].map((el) => {
+		return <CardComp key={el} item={el} />;
+	});
+
+	return <div>{items.length > 0 && cards}</div>;
 }
 
 export default Home;
