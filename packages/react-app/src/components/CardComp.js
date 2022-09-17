@@ -53,15 +53,16 @@ const CardComp = ({ itemAddress, isListing, forSale, purchased }) => {
 						Claim Item
 					</Button>
 				)}
-				{purchased && !data[0]?.buyerConfirm_ ? (
-					<Button variant="primary" onClick={onConfirmArrival}>
-						Confirm Arrival
-					</Button>
-				) : (
-					<Button variant="primary" disabled>
-						Arrived and confirmed
-					</Button>
-				)}
+				{purchased &&
+					(!data[0]?.buyerConfirm_ ? (
+						<Button variant="primary" onClick={onConfirmArrival}>
+							Confirm Arrival
+						</Button>
+					) : (
+						<Button variant="primary" disabled>
+							Arrived and confirmed
+						</Button>
+					))}
 			</Card.Body>
 		</Card>
 	) : (
