@@ -1,5 +1,4 @@
-// This address points to a dummy ERC-20 contract. Replace it with your own smart contracts.
 const addresses = {
-	factory: "0x84c5b8d51124d55225e9476ee1a5a5462ae751d5",
+	factory: "0x524084e710b0f5459CE088847A051e65cf5a4fe2",
 };
 export default addresses;
