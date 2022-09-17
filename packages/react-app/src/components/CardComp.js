@@ -59,7 +59,7 @@ const CardComp = ({ itemAddress, isListing, forSale, purchased }) => {
 					</Button>
 				) : (
 					<Button variant="primary" disabled>
-						Arrived
+						Arrived and confirmed
 					</Button>
 				)}
 			</Card.Body>
