@@ -1,13 +1,9 @@
-import erc20Abi from "./abis/erc20.json";
-import ownableAbi from "./abis/ownable.json";
-import singleItemFactoryAbi from "./abis/singleItemFactoryAbi.json";
-import singleItemListingAbi from "./abis/singleItemListingAbi.json";
+import factoryABI from "./abis/factoryABI.json";
+import listingABI from "./abis/listingABI.json";
 
 const abis = {
-	erc20: erc20Abi,
-	ownable: ownableAbi,
-	singleItemFactory: singleItemFactoryAbi,
-	singleItemListing: singleItemListingAbi,
+	factory: factoryABI,
+	listing: listingABI,
 };
 
 export default abis;

@@ -8,15 +8,20 @@ import Home from "./pages/Home";
 import Create from "./pages/Create";
 import Profile from "./pages/Profile";
 import { addresses, abis } from "@my-app/contracts";
+import { utils } from "ethers";
+
+const factoryInferface = new utils.Interface(abis.factory);
 
 function App() {
 	// Read more about useDapp on https://usedapp.io/
-	const { error: contractCallError, value: tokenBalance } =
+	console.log("factoryInferface :>> ", factoryInferface);
+	const { value } =
 		useCall({
-			contract: new Contract(addresses.ceaErc20, abis.erc20),
-			method: "balanceOf",
-			args: ["0x3f8CB69d9c0ED01923F11c829BaE4D9a4CB6c82C"],
+			contract: new Contract(addresses.factory, factoryInferface),
+			method: "getActiveListings",
+			args: [],
 		}) ?? {};
+	console.log("value", value);
 	return (
 		<Container>
 			<Header>
