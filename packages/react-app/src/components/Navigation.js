@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { Navbar, Nav, Container } from "react-bootstrap"
 import WalletButton from "./WalletButton";
-import logo from "../assets/images/logo.png"
+import logo from "../assets/images/logo.gif"
 
 const Navigation = () => {
 	return (
