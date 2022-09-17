@@ -15,11 +15,11 @@ const CardComp = ({ item }) => {
 			method: "getFrontEndData",
 			args: [],
 		}) ?? {};
-
+	console.log("data", data);
 	const handleBuy = () => {
 		console.log("buy clicked");
 	};
-	return data[0] ? (
+	return data ? (
 		<Card style={{ width: "18rem" }}>
 			<Card.Img variant="top" src={data[0]?.imageURL_} height="215px" style={{ objectFit: "contain" }} />
 			<Card.Body>
