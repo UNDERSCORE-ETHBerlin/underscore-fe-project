@@ -11,10 +11,8 @@ export const Body = styled.div`
 `;
 
 export const Button = styled.button`
-  background-color: white;
-  border: none;
-  border-radius: 8px;
-  color: #282c34;
+  background-color: black;
+  color: white;
   cursor: pointer;
   font-size: 16px;
   margin: 0px 20px;
@@ -43,12 +41,4 @@ export const Image = styled.img`
   height: 40vmin;
   margin-bottom: 16px;
   pointer-events: none;
-`;
-
-export const Link = styled.a.attrs({
-  target: "_blank",
-  rel: "noopener noreferrer",
-})`
-  color: #61dafb;
-  margin-top: 8px;
 `;

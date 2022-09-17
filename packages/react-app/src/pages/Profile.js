@@ -1,8 +1,11 @@
-import { Tab, Tabs, Container, Row, Col } from "react-bootstrap";
+import { Tab, Tabs, Container, Row, Col, Stack } from "react-bootstrap";
 import { useCall, useEthers } from "@usedapp/core";
 import { factoryContract } from "../constants";
 import CardComp from "../components/CardComp";
+import Avatar from "boring-avatars";
+
 const Profile = () => {
+
 	const { account } = useEthers();
 
 	const props =
