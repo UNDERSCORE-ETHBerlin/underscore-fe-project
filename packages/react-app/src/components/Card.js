@@ -27,9 +27,7 @@ const CardComp = ({ item }) => {
 			method: "getItemName",
 			args: [],
 		}) ?? {};
-	console.log("imageUrl", imageUrl);
-	console.log("itemDesc", itemDesc);
-	console.log("itemName", itemName);
+
 	const handleBuy = () => {
 		console.log("buy clicked");
 	};

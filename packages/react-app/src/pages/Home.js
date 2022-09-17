@@ -2,7 +2,7 @@ import CardComp from "../components/Card";
 import { factoryContract } from "../constants";
 import { useCall } from "@usedapp/core";
 import { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Spinner } from "react-bootstrap";
 function Home() {
 	const [items, setItems] = useState([]);
 	const { value } =
@@ -15,7 +15,7 @@ function Home() {
 	useEffect(() => {
 		setItems(value);
 	}, [value]);
-	if (!items?.length) return <div>Loading</div>;
+	if (!items?.length) return <Spinner animation="border" variant="light" />;
 	const cards = (
 		<Container fluid>
 			<Row>

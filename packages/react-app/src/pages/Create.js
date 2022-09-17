@@ -1,5 +1,5 @@
 import { useContractFunction } from "@usedapp/core";
-import { Button } from "react-bootstrap";
+import { Button, Spinner } from "react-bootstrap";
 import { factoryContract, arbitrator } from "../constants";
 import { Formik, Form, Field } from "formik";
 import { fakeUSDC } from "../constants";
@@ -17,7 +17,9 @@ const Create = () => {
 	};
 	console.log("state", state);
 	return state.status === "Mining" || state.status === "PendingSignature" ? (
-		<>Loading</>
+		<>
+			<Spinner animation="border" variant="light" />
+		</>
 	) : (
 		<>
 			Create an Item
@@ -30,32 +32,12 @@ const Create = () => {
 					name: "",
 					desc: "",
 				}}
-				//  validate={values => {
-				//    const errors = {};
-				//    if (!values.email) {
-				//      errors.email = 'Required';
-				//    } else if (
-				//      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-				//    ) {
-				//      errors.email = 'Invalid email address';
-				//    }
-				//    return errors;
-				//  }}
 				onSubmit={(values, { setSubmitting }) => {
 					setSubmitting(false);
 					handleFormSubmit(values);
 				}}
 			>
-				{({
-					values,
-					errors,
-					touched,
-					handleChange,
-					handleBlur,
-					handleSubmit,
-					isSubmitting,
-					/* and other goodies */
-				}) => (
+				{({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
 					<Form onSubmit={handleSubmit}>
 						<div className="inputContainer">
 							<label>USDC</label>
