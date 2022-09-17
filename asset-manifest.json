@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/underscore-fe-project/static/css/main.15d6ab0c.chunk.css",
+    "main.js": "/underscore-fe-project/static/js/main.4cd46c20.chunk.js",
+    "main.js.map": "/underscore-fe-project/static/js/main.4cd46c20.chunk.js.map",
+    "runtime-main.js": "/underscore-fe-project/static/js/runtime-main.15bea215.js",
+    "runtime-main.js.map": "/underscore-fe-project/static/js/runtime-main.15bea215.js.map",
+    "static/css/2.e9590945.chunk.css": "/underscore-fe-project/static/css/2.e9590945.chunk.css",
+    "static/js/2.76e78551.chunk.js": "/underscore-fe-project/static/js/2.76e78551.chunk.js",
+    "static/js/2.76e78551.chunk.js.map": "/underscore-fe-project/static/js/2.76e78551.chunk.js.map",
+    "index.html": "/underscore-fe-project/index.html",
+    "static/css/2.e9590945.chunk.css.map": "/underscore-fe-project/static/css/2.e9590945.chunk.css.map",
+    "static/css/main.15d6ab0c.chunk.css.map": "/underscore-fe-project/static/css/main.15d6ab0c.chunk.css.map",
+    "static/js/2.76e78551.chunk.js.LICENSE.txt": "/underscore-fe-project/static/js/2.76e78551.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/underscore-fe-project/static/media/Regular.7e09f70f.ttf",
+    "static/media/logo.2707f0e1.gif": "/underscore-fe-project/static/media/logo.2707f0e1.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.15bea215.js",
+    "static/css/2.e9590945.chunk.css",
+    "static/js/2.76e78551.chunk.js",
+    "static/css/main.15d6ab0c.chunk.css",
+    "static/js/main.4cd46c20.chunk.js"
+  ]
+}
