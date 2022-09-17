@@ -1,4 +1,4 @@
-import Card from "../components/Card";
+import CardComp from "../components/Card";
 import { factoryContract } from "../constants";
 import { useCall } from "@usedapp/core";
 import { useEffect, useState } from "react";
@@ -18,7 +18,7 @@ function Home() {
 	return (
 		<div>
 			{items?.map((item) => {
-				return <Card key={item} item={item} />;
+				return <CardComp key={item} item={item} />;
 			})}
 		</div>
 	);
