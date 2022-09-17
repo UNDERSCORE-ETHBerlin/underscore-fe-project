@@ -45,7 +45,8 @@
 		]
 	},
 	"scripts": {
-		"build": "react-scripts build",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
 		"eject": "react-scripts eject",
 		"ipfs": "yarn build && ipfs-deploy build/",
 		"start": "react-scripts start",
