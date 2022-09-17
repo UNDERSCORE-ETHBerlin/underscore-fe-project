@@ -1,4 +1,4 @@
-import Main from "../components/Main";
+import Card from "../components/Card";
 import { factoryContract } from "../constants";
 import { useCall } from "@usedapp/core";
 import { useEffect, useState } from "react";
@@ -14,9 +14,12 @@ function Home() {
 	useEffect(() => {
 		setItems(value);
 	}, [value]);
+	if (!items?.length) return <div>Loading</div>;
 	return (
 		<div>
-			<Main items={items} />
+			{items?.map((item) => {
+				return <Card key={item} item={item} />;
+			})}
 		</div>
 	);
 }
