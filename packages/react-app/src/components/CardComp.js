@@ -15,7 +15,6 @@ const CardComp = ({ item }) => {
 			method: "getFrontEndData",
 			args: [],
 		}) ?? {};
-	console.log("data", data);
 	const handleBuy = () => {
 		console.log("buy clicked");
 	};

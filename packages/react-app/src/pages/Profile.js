@@ -1,86 +1,42 @@
-import { useEffect, useState } from "react"
-import { Tab, Tabs, Container, Row, Col } from "react-bootstrap"
-import ItemsGrid from "../components/ItemsGrid"
-import CardComp from "../components/CardComp"
-
+import { Tab, Tabs, Container, Row, Col } from "react-bootstrap";
+import { useCall, useEthers } from "@usedapp/core";
+import { factoryContract } from "../constants";
+import CardComp from "../components/CardComp";
 const Profile = () => {
+	const { account } = useEthers();
 
-	const [items, setItems] = useState([])
-
-	const dummyItems = [
-		{	
-			itemUrl: "jsdnfjkd",
-			itemName: "djkfnsdj",
-			itemDesc: "jksdnffnsd"
-		},
-		{	
-			itemUrl: "jsdnfjkd",
-			itemName: "djkfnsdj",
-			itemDesc: "jksdnffnsd"
-		},
-		{	
-			itemUrl: "jsdnfjkd",
-			itemName: "djkfnsdj",
-			itemDesc: "jksdnffnsd"
-		},
-		{	
-			itemUrl: "jsdnfjkd",
-			itemName: "djkfnsdj",
-			itemDesc: "jksdnffnsd"
-		},
-		{	
-			itemUrl: "jsdnfjkd",
-			itemName: "djkfnsdj",
-			itemDesc: "jksdnffnsd"
-		},
-		{	
-			itemUrl: "jsdnfjkd",
-			itemName: "djkfnsdj",
-			itemDesc: "jksdnffnsd"
-		},
-		{	
-			itemUrl: "jsdnfjkd",
-			itemName: "djkfnsdj",
-			itemDesc: "jksdnffnsd"
-		},
-		{	
-			itemUrl: "jsdnfjkd",
-			itemName: "djkfnsdj",
-			itemDesc: "jksdnffnsd"
-		},
-	]
-
+	const { value: data } =
+		useCall({
+			contract: factoryContract,
+			method: "getSingleUserListings",
+			args: [account],
+		}) ?? {};
 	return (
 		<>
-			<Tabs
-				defaultActiveKey="profile"
-				id="fill-tab-example"
-				className="mb-3"
-				fill
-		    >
-		    	<Tab eventKey="listings" title="Listings">
-			    	<Container fluid>
+			<Tabs defaultActiveKey="listings" id="fill-tab-example" className="mb-3" fill>
+				<Tab eventKey="listings" title="Listings">
+					<Container fluid>
 						<Row>
-							{ dummyItems?.map((item) => {
-								return(<Col>
-									<br/>
-									<CardComp 
-										key={item} 
-										item={item} 
-									/>
-									<br/>
-								</Col>)
-							})}
+							{data && data[0]?.length > 0
+								? data[0].map((item) => {
+										return (
+											<Col key={item}>
+												<br />
+												<CardComp item={item} />
+												<br />
+											</Col>
+										);
+								  })
+								: "No Items Found"}
 						</Row>
 					</Container>
-		    	</Tab>
-
-		    	<Tab eventKey="sold" title="Sold">
-		    		dsjfnjkn
-		    	</Tab>
-		    </Tabs>
+				</Tab>
+				<Tab eventKey="sold" title="Sold">
+					dsjfnjkn
+				</Tab>
+			</Tabs>
 		</>
-	)
-}
+	);
+};
 
 export default Profile;
