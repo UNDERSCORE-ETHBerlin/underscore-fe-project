@@ -1,17 +1,20 @@
-import CardComp from "../components/Card";
+import CardComp from "../components/CardComp";
 import { factoryContract } from "../constants";
 import { useCall } from "@usedapp/core";
 import { useEffect, useState } from "react";
-import { Container, Row, Col, Spinner } from "react-bootstrap";
-function Home() {
-	const [items, setItems] = useState([]);
-	const { value } =
-		useCall({
+import Spinner from 'react-bootstrap/Spinner';
+
+const Home = () => {
+
+	const [items, setItems] = useState([])
+	const { value } = useCall(
+		{
 			contract: factoryContract,
 			method: "getActiveListings",
-			args: [],
-		}) ?? {};
-	// console.log("items", items);
+			args: []
+		}
+	) ?? {}
+
 	useEffect(() => {
 		setItems(value);
 	}, [value]);
