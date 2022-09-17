@@ -35,7 +35,7 @@ const CardComp = ({ item }) => {
 	};
 	return imageUrl && itemName && itemDesc ? (
 		<Card style={{ width: "18rem" }}>
-			<Card.Img variant="top" src={imageUrl[0]} />
+			<Card.Img variant="top" src={imageUrl[0]} height="215px" style={{ objectFit: "contain" }} />
 			<Card.Body>
 				<Card.Title style={{ color: "black" }}>Name: {itemName[0]}</Card.Title>
 				{<Card.Text style={{ color: "black" }}>Desc: {itemDesc[0]}</Card.Text>}{" "}
