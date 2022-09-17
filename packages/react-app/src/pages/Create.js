@@ -9,8 +9,6 @@ import "./create.css";
 const Create = () => {
 	const { state, send: createListing } = useContractFunction(factoryContract, "createListing");
 	const handleFormSubmit = (values) => {
-		console.log("createListing", values);
-		console.log("utils.parseEther(values._amountWanted) :>> ", utils.parseUnits(values._amountWanted.toString(), 18));
 		const { _tokenWanted, _amountWanted, arbitrator, imageURL, name, desc } = values;
 		const price = utils.parseUnits(_amountWanted.toString(), 18);
 		createListing(_tokenWanted, price, arbitrator, imageURL, name, desc);
@@ -37,7 +35,7 @@ const Create = () => {
 					handleFormSubmit(values);
 				}}
 			>
-				{({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
+				{({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
 					<Form onSubmit={handleSubmit}>
 						<div className="inputContainer">
 							<label>USDC</label>

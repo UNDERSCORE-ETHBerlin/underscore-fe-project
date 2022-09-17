@@ -23,9 +23,7 @@ const Home = () => {
 				{items[0].map((item) => {
 					return (
 						<Col key={item}>
-							<br />
-							<CardComp itemAddress={item} />
-							<br />
+							<CardComp itemAddress={item} forSale />
 						</Col>
 					);
 				})}
