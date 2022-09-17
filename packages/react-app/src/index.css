@@ -27,4 +27,9 @@ body {
   font-size: 28px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #FFF;
+}
+
+html {
+  background-color: #282c34;
 }
