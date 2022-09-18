@@ -22,7 +22,7 @@ const Home = () => {
 			<Row>
 				{items[0].map((item) => {
 					return (
-						<Col key={item}>
+						<Col xs={3} key={item} style={{ marginTop: "8px", marginBottom: "8px" }}>
 							<CardComp itemAddress={item} forSale />
 						</Col>
 					);
