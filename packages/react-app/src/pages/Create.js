@@ -13,7 +13,6 @@ const Create = () => {
 		const price = utils.parseUnits(_amountWanted.toString(), 18);
 		createListing(_tokenWanted, price, arbitrator, imageURL, name, desc);
 	};
-	console.log("state", state);
 	return state.status === "Mining" || state.status === "PendingSignature" ? (
 		<>
 			<Spinner animation="border" variant="light" />

@@ -23,19 +23,14 @@ const CardComp = ({ itemAddress, isListing, forSale, purchased }) => {
 		await buy();
 	};
 
-	const handleClaim = () => {
+	const handleClaimBySeller = () => {
 		console.log("claimed");
 	};
 
-	const onConfirmArrival = async () => {
-		console.log("onConfirmArrival");
+	const handleClaimByBuyer = async () => {
 		await confirmArrival();
 	};
 
-	// console.log("approveAllowanceState", approveAllowanceState);
-	// console.log("buyState", buyState);
-	console.log("data", data);
-	console.log("confirmArrivalState :>> ", confirmArrivalState);
 	return data ? (
 		<Card style={{ width: "18rem" }}>
 			<Card.Img variant="top" src={data[0]?.imageURL_} height="215px" style={{ objectFit: "contain" }} />
@@ -49,13 +44,13 @@ const CardComp = ({ itemAddress, isListing, forSale, purchased }) => {
 					</Button>
 				)}
 				{isListing && (
-					<Button variant="primary" onClick={handleClaim}>
+					<Button variant="primary" onClick={handleClaimBySeller}>
 						Claim Item
 					</Button>
 				)}
 				{purchased &&
 					(!data[0]?.buyerConfirm_ ? (
-						<Button variant="primary" onClick={onConfirmArrival}>
+						<Button variant="primary" onClick={handleClaimByBuyer}>
 							Confirm Arrival
 						</Button>
 					) : (

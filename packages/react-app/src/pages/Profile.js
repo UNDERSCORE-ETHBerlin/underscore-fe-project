@@ -5,38 +5,31 @@ import CardComp from "../components/CardComp";
 import Avatar from "boring-avatars";
 
 const Profile = () => {
-
 	const { account } = useEthers();
 
-	const props =
+	const { value: listedItems } =
 		useCall({
 			contract: factoryContract,
 			method: "getSingleUserListings",
 			args: [account],
 		}) ?? {};
-	console.log("props", props);
-	const { value: listedItems } = props;
 	const { value: purchasedItems } =
 		useCall({
 			contract: factoryContract,
 			method: "getSingleUserPurchases",
 			args: [account],
 		}) ?? {};
-	console.log("purchasedItems :>> ", purchasedItems);
 	return (
-		<Stack 
-			direction="vertical" 
+		<Stack
+			direction="vertical"
 			gap={2}
 			style={{
 				margin: "auto",
 				width: "80%",
-				padding: "20px"
+				padding: "20px",
 			}}
-		>	
-			<Stack
-				direction="vertical" 
-				gap={2}
-			>
+		>
+			<Stack direction="vertical" gap={2}>
 				<Avatar
 					size={240}
 					name={account}
@@ -47,7 +40,6 @@ const Profile = () => {
 
 				<h2>{account}</h2>
 			</Stack>
-
 			<Tabs defaultActiveKey="listings" id="fill-tab-example" className="mb-3" fill>
 				<Tab eventKey="listings" title="Your Listings">
 					<Container fluid>

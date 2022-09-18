@@ -31,7 +31,7 @@ const Home = () => {
 		</Container>
 	);
 
-	return <div>{items.length > 0 && cards}</div>;
+	return <div>{items.length > 0 ? cards : "No Items Found"}</div>;
 };
 
 export default Home;
