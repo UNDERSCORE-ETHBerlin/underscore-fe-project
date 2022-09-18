@@ -1,4 +1,6 @@
-# @my-app/react-app
+# Underscore FE APP
+
+WEBSITE: https://underscore-ethberlin.github.io/underscore-fe-project/
 
 This package is a fork of the default app built with [Create React App](https://github.com/facebook/create-react-app).
 
