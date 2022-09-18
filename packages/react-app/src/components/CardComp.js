@@ -32,7 +32,7 @@ const CardComp = ({ itemAddress, isListing, forSale, purchased }) => {
 	};
 
 	return data ? (
-		<Card style={{ width: "18rem" }}>
+		<Card>
 			<Card.Img variant="top" src={data[0]?.imageURL_} height="215px" style={{ objectFit: "contain" }} />
 			<Card.Body>
 				<Card.Title style={{ color: "black" }}>Name: {data[0]?.itemName_}</Card.Title>
